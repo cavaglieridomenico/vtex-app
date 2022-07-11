@@ -1,1 +1,1 @@
-# vtex-app
+# VTEX App
