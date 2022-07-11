@@ -1,0 +1,12 @@
+.container {
+  background-color: #aa00ff84;
+  padding: 0 1em;
+}
+
+.container--my-title {
+  border-bottom: 1px solid white;
+}
+
+.italic--my-title {
+  color: white;
+}

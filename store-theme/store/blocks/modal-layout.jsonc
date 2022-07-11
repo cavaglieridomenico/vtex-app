@@ -1,0 +1,20 @@
+{
+  "modal-trigger#first": {
+    "children": ["rich-text#trigger", "modal-layout#first"]
+  },
+  "rich-text#trigger": {
+    "props": {
+      "text": "MODAL",
+      "textColor": "c-on-emphasis"
+    }
+  },
+  "modal-layout#first": {
+    "children": ["rich-text#layout"]
+  },
+  "rich-text#layout": {
+    "props": {
+      "text": "Hello!",
+      "textColor": "c-on-emphasis"
+    }
+  }
+}

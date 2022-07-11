@@ -1,0 +1,13 @@
+.logoContainer.sizeDesktop {
+  display: block;
+}
+
+.logoImage {
+  border-radius: 50%;
+}
+
+.searchBarContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

@@ -1,0 +1,22 @@
+{
+  "rich-text": {
+    "props": {
+      "text": "*Hello world!*",
+      "textAlignment": "RIGHT",
+      "textPosition": "RIGHT",
+      "font": "t-heading-1",
+      "blockClass": "my-title"
+    },
+    "title": "my-title"
+  },
+  "rich-text#second": {
+    "props": {
+      "text": "**Hello, world!**",
+      "textAlignment": "CENTER",
+      "textPosition": "CENTER",
+      "font": "t-heading-1",
+      "blockClass": "my-title-second"
+    },
+    "title": "my-title"
+  }
+}
