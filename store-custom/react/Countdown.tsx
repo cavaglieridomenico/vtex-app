@@ -40,6 +40,11 @@ Countdown.schema = {
   description: 'editor.countdown.description',
   type: 'object',
   properties: {
+      title: {
+        title: 'I am a title',
+        type: 'string',
+        default: null,
+      },
     targetDate: {
       title: 'Final date',
       description: 'Final date used in the countdown',
