@@ -2,17 +2,14 @@ import React, {useState} from 'react';
 import {TimeSplit} from "./typings/global";
 import {tick, getTwoDaysFromNow} from "./utils/time";
 import { useCssHandles } from 'vtex.css-handles';
-import { FormattedMessage } from 'react-intl'
 
 interface CountdownProps {
-  title: string;
   targetDate: string;
 }
 
 const DEFAULT_TARGET_DATE = getTwoDaysFromNow();
 
-const Countdown: StorefrontFunctionComponent<CountdownProps> = ({title, targetDate = DEFAULT_TARGET_DATE}) => {
-  const titleText = title || <FormattedMessage id="countdown.title" />
+const Countdown: StorefrontFunctionComponent<CountdownProps> = ({targetDate = DEFAULT_TARGET_DATE}) => {
 
   const [remainingTime, setTime] = useState<TimeSplit>({
     hours: '00',
@@ -20,18 +17,15 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({title, targetDa
      seconds: '00'
   });
 
-  const CSS_HANDLES = ['container', 'countdown', 'title']
+  const CSS_HANDLES = ['countdown']
   const handles = useCssHandles(CSS_HANDLES);
 
   tick(targetDate, setTime);
 
   return(
-    <div className={`${handles.container} t-heading-2 fw3 w-100 c-muted-1`}>
-      <div className={`${handles.title} db tc`}>{titleText}</div>
       <div className={`${handles.countdown} db tc`}>
         <h1>{`${remainingTime.hours}:${remainingTime.minutes}:${remainingTime.seconds}`}</h1>
       </div>
-    </div>
   )
 }
 
@@ -40,11 +34,6 @@ Countdown.schema = {
   description: 'countdown.description',
   type: 'object',
     properties: {
-      title: {
-        title: 'I am a title',
-        type: 'string',
-        default: null,
-      },
       targetDate: {
         title: 'Final date',
         description: 'Final date used in the countdown',
