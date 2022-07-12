@@ -7,7 +7,7 @@
       "font": "t-heading-1",
       "blockClass": "my-title"
     },
-    "title": "my-title"
+    "title": "my-title-1"
   },
   "rich-text#second": {
     "props": {
@@ -17,6 +17,6 @@
       "font": "t-heading-1",
       "blockClass": "my-title-second"
     },
-    "title": "my-title"
+    "title": "my-title-2"
   }
 }
