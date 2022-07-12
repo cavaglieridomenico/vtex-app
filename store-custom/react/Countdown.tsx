@@ -29,28 +29,28 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({title, targetDa
     <div className={`${handles.container} t-heading-2 fw3 w-100 c-muted-1`}>
       <div className={`${handles.title} db tc`}>{titleText}</div>
       <div className={`${handles.countdown} db tc`}>
-      <h1>{`${remainingTime.hours}:${remainingTime.minutes}:${remainingTime.seconds}`}</h1>
-    </div>
+        <h1>{`${remainingTime.hours}:${remainingTime.minutes}:${remainingTime.seconds}`}</h1>
+      </div>
     </div>
   )
 }
 
 Countdown.schema = {
-  title: 'editor.countdown.title',
-  description: 'editor.countdown.description',
+  title: 'countdown.title',
+  description: 'countdown.description',
   type: 'object',
-  properties: {
+    properties: {
       title: {
         title: 'I am a title',
         type: 'string',
         default: null,
       },
-    targetDate: {
-      title: 'Final date',
-      description: 'Final date used in the countdown',
-      type: 'string',
-      default: null,
-    }
+      targetDate: {
+        title: 'Final date',
+        description: 'Final date used in the countdown',
+        type: 'string',
+        default: null,
+      }
   },
 }
 
