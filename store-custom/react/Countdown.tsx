@@ -1,14 +1,17 @@
 import React, {useState} from 'react';
 import {TimeSplit} from "./typings/global";
 import {tick, getTwoDaysFromNow} from "./utils/time";
+import { FormattedMessage } from 'react-intl'
 
 interface CountdownProps {
-  targetDate: string
+  title: string;
+  targetDate: string;
 }
 
 const DEFAULT_TARGET_DATE = getTwoDaysFromNow();
 
-const Countdown: StorefrontFunctionComponent<CountdownProps> = ({targetDate = DEFAULT_TARGET_DATE}) => {
+const Countdown: StorefrontFunctionComponent<CountdownProps> = ({title, targetDate = DEFAULT_TARGET_DATE}) => {
+  const titleText = title || <FormattedMessage id="countdown.title" />
 
   const [remainingTime, setTime] = useState<TimeSplit>({
     hours: '00',
