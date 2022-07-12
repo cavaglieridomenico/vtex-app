@@ -30,8 +30,8 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({targetDate = DE
 }
 
 Countdown.schema = {
-  title: 'countdown.title',
-  description: 'countdown.description',
+  title: 'editor.countdown.title',
+  description: 'editor.countdown.description',
   type: 'object',
     properties: {
       targetDate: {
