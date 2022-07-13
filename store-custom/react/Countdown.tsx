@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {TimeSplit} from "./typings/global";
 import {tick, getTwoDaysFromNow} from "./utils/time";
 import { useCssHandles } from 'vtex.css-handles';
@@ -18,19 +18,33 @@ const Countdown: StorefrontFunctionComponent = () => {
      seconds: '00'
   });
 
+  const [isReleased, setIsRelased] = useState(false);
+  const [releasedDate, setRelasedDate] = useState("");
+
   const CSS_HANDLES = ['countdown']
   const handles = useCssHandles(CSS_HANDLES);
 
   //Product
   const {product} = useProduct();
-  
+
+
+
   const { data, loading, error } = useQuery(productReleaseDate, {
     variables: {
       slug: product?.linkText
     },
     ssr: false
   })
-
+  
+  useEffect(() => {
+    if (data) {
+      const releasedDate = new Date(data.product.releaseDate)
+      const releaseDateMilliSeconds = releasedDate.getTime();
+      const today = new Date().getTime();
+      today > releaseDateMilliSeconds && setIsRelased(true);
+      setRelasedDate(releasedDate.toLocaleDateString());
+    }
+  }, [data]);
   
   if (!product) {
     return (
@@ -51,6 +65,14 @@ const Countdown: StorefrontFunctionComponent = () => {
     return (
       <div>
         <span>Error!</span>
+      </div>
+    )
+  }
+
+  if (isReleased) {
+    return (
+      <div>
+        <p>Product released on {`${releasedDate}`}</p>
       </div>
     )
   }
