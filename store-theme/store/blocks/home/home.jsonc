@@ -1,8 +1,6 @@
 {
   "store.home": {
     "blocks": [
-      "countdown",
-      "countdown.title",
       "list-context.product-list",
       "rich-text",
       "rich-text#second",
