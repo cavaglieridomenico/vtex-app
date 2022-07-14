@@ -11,7 +11,7 @@
   },
   "rich-text#second": {
     "props": {
-      "text": "**Hello, world!**",
+      "text": "**Hello world!**",
       "textAlignment": "CENTER",
       "textPosition": "CENTER",
       "font": "t-heading-1",
